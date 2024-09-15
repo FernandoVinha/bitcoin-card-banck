@@ -1,0 +1,15 @@
+[Unit]
+Description=Bitcoin Core Daemon
+After=network.target
+
+[Service]
+ExecStart=/home/vinha/Documentos/bitcoin-card-banck/bitcoin-0.21.1/bin/bitcoind -conf=/etc/bitcoin/bitcoin.conf
+ExecStop=/home/vinha/Documentos/bitcoin-card-banck/bitcoin-0.21.1/bin/bitcoin-cli stop
+Restart=on-failure
+User=root
+Group=root
+WorkingDirectory=/home/vinha/Documentos/bitcoin-card-banck
+Environment=HOME=/root
+
+[Install]
+WantedBy=multi-user.target
